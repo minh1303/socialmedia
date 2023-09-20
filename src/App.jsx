@@ -8,7 +8,7 @@ function App() {
   const [user, setUser] = useState(null);
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
-      if (!currentUser) return
+      if (!currentUser) setUser(null)
       setUser(currentUser);
     });
   });
