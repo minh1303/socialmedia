@@ -10,7 +10,7 @@ function App() {
     onAuthStateChanged(auth, (currentUser) => {
       if (!currentUser) setUser(null)
       setUser(currentUser);
-    });
+    },auth.currentUser);
   });
 
   return (
