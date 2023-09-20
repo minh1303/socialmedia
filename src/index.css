@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+}
+
+button {
+  border: 1px solid black;
+  padding: 5px;
+  background-color: skyblue;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: darkcyan;
+}
+
+textarea {
+  resize: none;
+}
