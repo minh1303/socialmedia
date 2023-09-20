@@ -12,14 +12,28 @@ const Header = () => {
   });
   return (
     <header className="bg-cyan-700 flex justify-around p-3 align-middle text-white">
-      <div className="font-bold text-2xl"><Link to={"/"}>Odin Book</Link></div>
-      {user &&<p>Welcome {user.email}</p>}
+      <div className="font-bold text-2xl">
+        <Link to={"/"}>Odin Book</Link>
+      </div>
+      {user && <p>Welcome {user.email}</p>}
       <nav>
         <ul className="flex flex-row gap-3">
-          {!user && <li>
-            <NavLink to={"/login"}>Login</NavLink>
-          </li>}
-          {user && <li className="cursor-pointer" onClick={() => signOut(auth)}>Sign out</li>}
+          {!user && (
+            <li>
+              <NavLink to={"/login"}>Login</NavLink>
+            </li>
+          )}
+          {user && (
+            <li
+              className="cursor-pointer"
+              onClick={async () => {
+                await signOut(auth);
+                setUser(null);
+              }}
+            >
+              Sign out
+            </li>
+          )}
         </ul>
       </nav>
     </header>
